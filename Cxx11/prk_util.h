@@ -37,6 +37,7 @@
 #include <cstdint>
 #include <cfloat>  // FLT_MIN
 #include <climits>
+#include <complex>
 
 // Test standard library _after_ standard headers have been included...
 #if !defined(__NVCC__) && !defined(__PGI) && !defined(__ibmxl__) && (defined(__GLIBCXX__) || defined(_GLIBCXX_RELEASE) ) && !defined(_GLIBCXX_USE_CXX11_ABI)
@@ -332,6 +333,11 @@ namespace prk {
     template <typename T>
     T abs(T x) {
         return (x >= 0 ? x : -x);
+    }
+
+    template <typename T>
+    T abs(std::complex<T> x) {
+        return std::abs(x);
     }
 
     template <>
