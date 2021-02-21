@@ -1,4 +1,3 @@
-
 all: nstream.class p2p.class stencil.class transpose.class
 
 %.class: %.scala
